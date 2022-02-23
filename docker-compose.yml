@@ -1,0 +1,13 @@
+version: "3"
+services:
+  coturn-server:
+    container_name: coturn-server
+    image: savimonty/coturn-server
+    build:
+      context: .
+    ports:
+      - "3478:3478"
+      - "9443:9443"
+    volumes:
+      - ./certs:/certs
+      - ./logs:/logs
